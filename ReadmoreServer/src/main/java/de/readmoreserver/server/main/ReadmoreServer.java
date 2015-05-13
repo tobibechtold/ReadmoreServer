@@ -7,6 +7,7 @@ import org.restlet.data.Protocol;
 import org.restlet.resource.ServerResource;
 import org.restlet.routing.Router;
 
+import de.readmoreserver.server.restlet.BeitragRestlet;
 import de.readmoreserver.server.restlet.ForumRestlet;
 import de.readmoreserver.server.restlet.ThreadsRestlet;
 

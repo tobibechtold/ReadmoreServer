@@ -1,4 +1,4 @@
-package de.readmoreserver.server.main;
+package de.readmoreserver.server.restlet;
 
 import java.util.List;
 
