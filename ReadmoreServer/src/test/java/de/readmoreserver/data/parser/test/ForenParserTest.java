@@ -32,7 +32,7 @@ public class ForenParserTest {
 //			System.out.println(t.getId() + " " + t.getTitel() + " Seiten: " + t.getAnzahlSeiten());
 //		}
 		
-		for(Beitrag b : bparser.getBeitraege(10, 91, 138496)) {
+		for(Beitrag b : bparser.getBeitraege(10, 91, 138496, 1)) {
 			System.out.println(b.getErsteller().getAnzeigename() + "(" + b.getErsteller().getAvatar() + ")" + " : " + b.getInhalt());
 		}
 	}

@@ -14,17 +14,26 @@ import de.readmoreserver.data.beans.User;
 
 public class BeitragParser {
 	
-	public List<Beitrag> getBeitraege(int forenId, int kategorieId, int threadId) {
+	public List<Beitrag> getBeitraege(int forenId, int kategorieId, int threadId, int seite) {
 		
 		List<Beitrag> beitraege = new ArrayList<Beitrag>();
 		Document doc = null;
+		Document doc2 = null;
 		
 		try {
 			doc = Jsoup.connect("http://www.readmore.de/forums/" 
 								+ kategorieId + "/" 
 								+ forenId + "/" 
 								+ threadId).get();
-			Elements e = doc.getElementsByClass("post");
+			
+			Elements pagination = doc.getElementsByClass("pagination");
+			String text2 = pagination.get(0).getElementsByTag("li").get(0).getElementsByAttribute("href").get(0).baseUri();
+			
+			String url = text2 + "&page=" + seite;
+			
+			doc2 = Jsoup.connect(url + "=" + seite).get();
+			
+			Elements e = doc2.getElementsByClass("post");
 			for(Element element : e) {
 				
 				Beitrag b = new Beitrag();
@@ -34,7 +43,7 @@ public class BeitragParser {
 				beitraege.add(b);
 			}
 			
-			Elements infos = doc.getElementsByClass("info");
+			Elements infos = doc2.getElementsByClass("info");
 			int infoCount = 0;
 			for(Element info : infos) {
 				
