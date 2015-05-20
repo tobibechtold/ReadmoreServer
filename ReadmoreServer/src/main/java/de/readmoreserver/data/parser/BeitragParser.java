@@ -26,12 +26,11 @@ public class BeitragParser {
 								+ forenId + "/" 
 								+ threadId).get();
 			
-			Elements pagination = doc.getElementsByClass("pagination");
-			String text2 = pagination.get(0).getElementsByTag("li").get(0).getElementsByAttribute("href").get(0).baseUri();
+			String text2 = doc.baseUri();
 			
 			String url = text2 + "&page=" + seite;
 			
-			doc2 = Jsoup.connect(url + "=" + seite).get();
+			doc2 = Jsoup.connect(url).get();
 			
 			Elements e = doc2.getElementsByClass("post");
 			for(Element element : e) {
