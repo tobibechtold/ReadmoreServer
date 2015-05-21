@@ -24,8 +24,9 @@ public class BeitragRestlet extends Restlet {
 		int categoryId = Integer.parseInt(queryAsForm.getFirstValue("categoryId"));
 		int forenId = Integer.parseInt(queryAsForm.getFirstValue("forenId"));
 		int threadId = Integer.parseInt(queryAsForm.getFirstValue("threadId"));
+		int seite = Integer.parseInt(queryAsForm.getFirstValue("seite"));
 		
-		List<Beitrag> threads = getBeitraege(categoryId, forenId, threadId);
+		List<Beitrag> threads = getBeitraege(categoryId, forenId, threadId, seite);
 		
         String message = null;
         
@@ -35,10 +36,10 @@ public class BeitragRestlet extends Restlet {
         response.setEntity(message, MediaType.TEXT_PLAIN);
     }
 
-	private List<Beitrag> getBeitraege(int categoryId, int forenId, int threadId) {
+	private List<Beitrag> getBeitraege(int categoryId, int forenId, int threadId, int seite) {
 
 		BeitragParser tp = new BeitragParser();
 		
-		return tp.getBeitraege(forenId, categoryId, threadId);
+		return tp.getBeitraege(forenId, categoryId, threadId, seite);
 	}
 }
