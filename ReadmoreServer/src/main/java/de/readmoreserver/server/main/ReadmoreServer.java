@@ -4,7 +4,6 @@ import org.restlet.Application;
 import org.restlet.Component;
 import org.restlet.Restlet;
 import org.restlet.data.Protocol;
-import org.restlet.resource.ServerResource;
 import org.restlet.routing.Router;
 
 import de.readmoreserver.server.restlet.BeitragRestlet;
