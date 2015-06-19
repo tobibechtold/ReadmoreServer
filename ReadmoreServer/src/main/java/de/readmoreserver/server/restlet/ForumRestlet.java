@@ -16,7 +16,6 @@ public class ForumRestlet extends Restlet {
 	
 	@Override
     public void handle(Request request, Response response) {
-        // Print the requested URI path
 		
 		List<Forum> forum = getForum();
 		

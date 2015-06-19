@@ -32,6 +32,14 @@ public class ThreadParser {
 							if(a.tagName().equals("a")) {
 								if(childChildren.size() > 3) {
 									
+									String anzahlBeitraege = children.get(children.size() - 2).text().split(" ")[0];
+									String anzahl = anzahlBeitraege.replace(".", "");
+									thread.setAnzahlBeitraege(Integer.parseInt(anzahl));
+									Element letzterBeitrag = children.get(children.size() - 1);
+									String user = letzterBeitrag.getElementsByTag("a").get(0).text();
+									String uhrzeit = letzterBeitrag.getElementsByTag("span").get(0).text();
+									thread.setLetzterBeitrag(user);
+									thread.setLetzterBeitragDatum(uhrzeit);
 									String[] s = a.text().split(" Erstellt von ");
 									thread.setTitel(s[0]);
 									thread.setForumId(forenId);
