@@ -32,6 +32,7 @@ public class BeitragParser {
 			
 			doc2 = Jsoup.connect(url).get();
 			
+			
 			Elements e = doc2.getElementsByClass("post");
 			for(Element element : e) {
 				
@@ -65,6 +66,22 @@ public class BeitragParser {
 				beitraege.get(infoCount).setErsteller(u);
 				infoCount++;				
 			}
+			
+			Elements head = doc2.getElementsByClass("head");
+			int headInfoCount = 0;
+			for(Element headInfo : head) {
+				
+				String info = headInfo.text();
+				String[] splittedInfos = info.split(" ");
+				String datum = splittedInfos[1].split(",")[0];
+				String uhrzeit = splittedInfos[2];
+				
+				beitraege.get(headInfoCount).setTag(datum);
+				beitraege.get(headInfoCount).setUhrzeit(uhrzeit);
+				
+				headInfoCount++;
+			}
+			
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
