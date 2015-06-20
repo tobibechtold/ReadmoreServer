@@ -24,7 +24,7 @@ public class ForumRestlet extends Restlet {
         Gson gson = new Gson();
         message = gson.toJson(forum);
         
-        response.setEntity(message, MediaType.TEXT_PLAIN);
+        response.setEntity(message, MediaType.APPLICATION_ALL_JSON);
     }
 
 	private List<Forum> getForum() {

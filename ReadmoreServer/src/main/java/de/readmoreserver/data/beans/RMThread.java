@@ -9,6 +9,9 @@ public class RMThread {
 	int forumId;
 	int anzahlSeiten;
 	User erstelltVon;
+	int anzahlBeitraege;
+	String letzterBeitrag;
+	String letzterBeitragDatum;
 	
 	public RMThread() {
 		
@@ -20,6 +23,30 @@ public class RMThread {
 		this.titel = titel;
 		this.id = id;
 		this.erstelltVon = erstelltVon;
+	}
+
+	public int getAnzahlBeitraege() {
+		return anzahlBeitraege;
+	}
+
+	public String getLetzterBeitrag() {
+		return letzterBeitrag;
+	}
+
+	public String getLetzterBeitragDatum() {
+		return letzterBeitragDatum;
+	}
+
+	public void setAnzahlBeitraege(int anzahlBeitraege) {
+		this.anzahlBeitraege = anzahlBeitraege;
+	}
+
+	public void setLetzterBeitrag(String letzterBeitrag) {
+		this.letzterBeitrag = letzterBeitrag;
+	}
+
+	public void setLetzterBeitragDatum(String letzterBeitragDatum) {
+		this.letzterBeitragDatum = letzterBeitragDatum;
 	}
 
 	public int getAnzahlSeiten() {

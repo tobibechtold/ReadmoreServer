@@ -1,6 +1,7 @@
 package de.readmoreserver.data.parser.test;
 
 
+import org.junit.*;
 import de.readmoreserver.data.beans.Forum;
 import de.readmoreserver.data.beans.RMThread;
 import de.readmoreserver.data.parser.ForenParser;

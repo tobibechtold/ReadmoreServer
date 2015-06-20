@@ -8,18 +8,32 @@ public class Beitrag {
 	int threadId;
 	String inhalt;
 	User ersteller;
-	Date datum;
-	
-	public Beitrag() {}
-	
-	public Beitrag(int id, int threadId, String inhalt, User ersteller,
-			Date datum) {
-		super();
-		this.id = id;
-		this.threadId = threadId;
-		this.inhalt = inhalt;
-		this.ersteller = ersteller;
-		this.datum = datum;
+	String tag;
+	String uhrzeit;
+	String beitragNummer;
+
+	public String getBeitragNummer() {
+		return beitragNummer;
+	}
+
+	public void setBeitragNummer(String beitragNummer) {
+		this.beitragNummer = beitragNummer;
+	}
+
+	public String getTag() {
+		return tag;
+	}
+
+	public String getUhrzeit() {
+		return uhrzeit;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
+
+	public void setUhrzeit(String uhrzeit) {
+		this.uhrzeit = uhrzeit;
 	}
 
 	public int getId() {
@@ -38,10 +52,6 @@ public class Beitrag {
 		return ersteller;
 	}
 
-	public Date getDatum() {
-		return datum;
-	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -58,8 +68,5 @@ public class Beitrag {
 		this.ersteller = ersteller;
 	}
 
-	public void setDatum(Date datum) {
-		this.datum = datum;
-	}
-		
+
 }

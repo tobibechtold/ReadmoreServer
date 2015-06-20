@@ -73,9 +73,11 @@ public class BeitragParser {
 				
 				String info = headInfo.text();
 				String[] splittedInfos = info.split(" ");
+				String beitragNummer = splittedInfos[0];
 				String datum = splittedInfos[1].split(",")[0];
 				String uhrzeit = splittedInfos[2];
 				
+				beitraege.get(headInfoCount).setBeitragNummer(beitragNummer);
 				beitraege.get(headInfoCount).setTag(datum);
 				beitraege.get(headInfoCount).setUhrzeit(uhrzeit);
 				

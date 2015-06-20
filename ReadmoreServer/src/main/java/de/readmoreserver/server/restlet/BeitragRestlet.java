@@ -33,7 +33,7 @@ public class BeitragRestlet extends Restlet {
         Gson gson = new Gson();
         message = gson.toJson(threads);
         
-        response.setEntity(message, MediaType.TEXT_PLAIN);
+        response.setEntity(message, MediaType.APPLICATION_ALL_JSON);
     }
 
 	private List<Beitrag> getBeitraege(int categoryId, int forenId, int threadId, int seite) {
